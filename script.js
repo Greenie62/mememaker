@@ -2,10 +2,15 @@ var headerBGSelect=document.querySelector("#headerbgcolor");
 var header=document.querySelector("header");
 var slideshowEl=document.querySelector(".slideshow")
 var optionCountEl=document.querySelector("#optionCount")
-var leftArrow=document.querySelector(".fa-arrow-left")
-var rightArrow=document.querySelector(".fa-arrow-right")
+var leftArrow=document.querySelector(".memeprv")
+var rightArrow=document.querySelector(".memenext")
 var textField=document.querySelector("#message")
 var memeOutputEL=document.querySelector(".memeoutput")
+var footerEl=document.querySelector(".footer")
+var textLeftArrow=document.querySelector(".textleft")
+var textRightArrow=document.querySelector(".textright")
+var textUpArrow=document.querySelector(".textup")
+var textDownArrow=document.querySelector(".textdown")
 
 var images=["./assets/cardi.jpg","./assets/drake.jpg","./assets/grinch.jpeg", "./assets/joker.jpg","./assets/spongebob.jpg"]
 var names=["cardi", "drake", "grinch", "joker", "spongebob"]
@@ -14,7 +19,8 @@ let count=1;
 headerBGSelect.onchange=(e)=>{
         var color=e.target.value;
         header.style.setProperty("--color",color)
-        document.querySelector(".selectBtn").style.setProperty("--color",color)
+        footerEl.style.backgroundColor=color
+        document.querySelector(".selectBtn").style.backgroundColor=color
 }
 
 optionCountEl.innerHTML=count;
@@ -46,6 +52,7 @@ leftArrow.onclick=()=>{
     }
     count--
     renderSlideDiv()
+    optionCountEl.innerHTML=count
 }
 
 
@@ -56,6 +63,7 @@ rightArrow.onclick=()=>{
     }
     count++
     renderSlideDiv()
+    optionCountEl.innerHTML=count
 }
 
 
@@ -66,7 +74,7 @@ function grabMemeData(src){
 
         var html=`<div class='memeDiv'>
         <img style="height:200px" src=${src} alt="img">
-        <h2>${textField.value}</h2>
+        <h2 class='h2Text'>${textField.value}</h2>
         </div>`
 
         memeOutputEL.innerHTML=html;
@@ -75,5 +83,37 @@ function grabMemeData(src){
 
 
        
+}
+
+let left=10;
+let topPx=10;
+
+textLeftArrow.onclick=()=>{
+    left-=5
+    document.querySelector(".h2Text").style.setProperty("--left",left)
+    document.querySelector(".h2Text").style.color='green'
+   
+}
+
+textRightArrow.onclick=()=>{
+    left+=5
+    document.querySelector(".h2Text").style.setProperty("--left",left)
+    document.querySelector(".h2Text").style.color='green'
+   
+}
+
+
+textUpArrow.onclick=()=>{
+    topPx-=5
+    document.querySelector(".h2Text").style.setProperty("--top",topPx)
+    document.querySelector(".h2Text").style.color='green'
+   
+}
+
+textDownArrow.onclick=()=>{
+    topPx+=5
+    document.querySelector(".h2Text").style.setProperty("--top",topPx)
+    document.querySelector(".h2Text").style.color='green'
+   
 }
     

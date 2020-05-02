@@ -114,6 +114,17 @@ header > h1{
     margin:0 auto;
 }
 
+.textController{
+    left:70px;
+    top:50px;
+}
+
+.h2Text{
+    left:calc(var(--left,10)*1px);
+    top:calc(var(--top,10)*1px);
+    color:red;
+}
+
 
 footer{
     background:var(--color);
