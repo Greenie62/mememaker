@@ -91,14 +91,12 @@ let topPx=10;
 textLeftArrow.onclick=()=>{
     left-=5
     document.querySelector(".h2Text").style.setProperty("--left",left)
-    document.querySelector(".h2Text").style.color='green'
    
 }
 
 textRightArrow.onclick=()=>{
     left+=5
     document.querySelector(".h2Text").style.setProperty("--left",left)
-    document.querySelector(".h2Text").style.color='green'
    
 }
 
@@ -106,14 +104,12 @@ textRightArrow.onclick=()=>{
 textUpArrow.onclick=()=>{
     topPx-=5
     document.querySelector(".h2Text").style.setProperty("--top",topPx)
-    document.querySelector(".h2Text").style.color='green'
    
 }
 
 textDownArrow.onclick=()=>{
     topPx+=5
     document.querySelector(".h2Text").style.setProperty("--top",topPx)
-    document.querySelector(".h2Text").style.color='green'
    
 }
     
