@@ -95,14 +95,14 @@ textLeftArrow.onclick=()=>{
 }
 
 textRightArrow.onclick=()=>{
-    left+=5
+    left+=10
     document.querySelector(".h2Text").style.setProperty("--left",left)
    
 }
 
 
 textUpArrow.onclick=()=>{
-    topPx-=5
+    topPx-=10
     document.querySelector(".h2Text").style.setProperty("--top",topPx)
    
 }
